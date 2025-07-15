@@ -74,6 +74,9 @@
             if (!Number.isInteger(A) || !Number.isInteger(B) || Number.isInteger(C)) {
                 return null;
             }
+            if (B <= A) {
+                return null;
+            }    
 
             let validSolutions = [];
             let minInteger = Math.floor(A);
@@ -125,6 +128,11 @@
                 errorDiv.classList.remove('hidden');
                 return;
             }
+            if (B <= A) {
+                errorDiv.textContent = 'B 必須大於 A';
+                errorDiv.classList.remove('hidden');
+                return;
+            }    
 
             const result = findIntegerD(A, B, C);
             if (result) {
@@ -135,7 +143,7 @@
                     resultList.appendChild(li);
                 });
             } else {
-                errorDiv.textContent = '無法找到滿足條件的外幣 (台幣 > .5 & 台幣 < .4 )';
+                errorDiv.textContent = '無法找到滿足條件的外幣 (台幣 > .5 or 台幣 < .4 )';
                 errorDiv.classList.remove('hidden');
             }
         }
