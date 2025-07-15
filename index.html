@@ -42,7 +42,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>計算整數 D 和 Y 值</title>
+    <title>計算整數 外幣 和 台幣 值</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -131,11 +131,11 @@
                 resultDiv.classList.remove('hidden');
                 result.forEach(([D, Y]) => {
                     const li = document.createElement('li');
-                    li.textContent = `D = ${D}, Y = ${Y.toFixed(7)}`;
+                    li.textContent = `外幣 = ${D}, 台幣 = ${Y.toFixed(7)}`;
                     resultList.appendChild(li);
                 });
             } else {
-                errorDiv.textContent = '無法找到滿足條件的整數 D';
+                errorDiv.textContent = '無法找到滿足條件的整數 外幣';
                 errorDiv.classList.remove('hidden');
             }
         }
